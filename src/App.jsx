@@ -12,6 +12,7 @@ import Logout from './pages/Logout'
 import Healthydrinks from './pages/pages/Healthydrinks'
 import DrinksDetail from './pages/pages/DrinksDetail'
 import DrinkEdit from './pages/pages/DrinkEdit'
+import DrinksAdd from './pages/pages/DrinksAdd'
 import './App.css'
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
      <Route path='/healthyfoods' element={<Healthyfoods/>}/>
      <Route path='/healthydrinks' element={<Healthydrinks/>}/>
      <Route path='/healthyfoods/new' element={<FoodsAdd/>}/>
+     <Route path='/healthydrinks/new' element={<DrinksAdd/>}/>
      <Route path='/healthyfoods/:id' element={<FoodsDetail/>}/>
      <Route path='/healthydrinks/:id' element={<DrinksDetail/>}/>
      <Route path='/healthyfoods/:id/edit' element={<FoodEdit/>}/>

@@ -2,8 +2,8 @@ import React from 'react'
 
 function FoodsForm(props) {
   return (
-    <div>
-      <h1>{props.nameverb} your Foods</h1>
+    <div className="custom-list">
+      <h1 >{props.nameverb} your Foods</h1>
       <form onSubmit={props.handleSubmit}>                
                 <div>  
                     <label htmlFor='foodName'>Foods Name:</label>
