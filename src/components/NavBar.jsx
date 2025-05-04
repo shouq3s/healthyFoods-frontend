@@ -9,9 +9,9 @@ function NavBar() {
      <ul>
       <Link to='/'>Home </Link>|
      <Link to='/healthyfoods'>HealthyFoods </Link>|
-      <Link to='/healthyfoods/new'> Add HealthyFoods</Link> |
      <Link to='/healthydrinks'>healthy Drink   </Link>|
-     <Link to='#'>new healthy Drink</Link>|
+     <Link to='/healthyfoods/new'> Add HealthyFoods</Link> |
+     <Link to='/healthydrinks/new'>new healthy Drink</Link>|
      <Link to='/logout'>Logout </Link>|
      </ul> 
      </nav>
