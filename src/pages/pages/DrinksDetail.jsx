@@ -2,13 +2,15 @@
 import React, { useState,useEffect } from 'react'
 import NavBar from '../../components/NavBar'
 import { useParams , useNavigate } from 'react-router'
-
+import { Link } from 'react-router'
 import { authorizedRequest,setTokens } from '../../lib/api'
 function DrinksDetail() {
     const { id }= useParams() 
     const navigate = useNavigate()
     const [drinks,setDrinks] = useState(null)
     const [errorMsg, setErrorMsg] = useState('')
+    
+     
 
     async function getSpecifyDrink() {
           try{
@@ -26,7 +28,7 @@ function DrinksDetail() {
     useEffect(() => {
         getSpecifyDrink()
     }, [])
-   
+    
    
     if (errorMsg) return <h1>{errorMsg}</h1>
     if (!drinks) return <h1>Loading your drinks...</h1>
@@ -48,6 +50,8 @@ function DrinksDetail() {
       <h4>calories: {drinks.calories} Cals </h4>
       <h4>Protein: {drinks.Protien}g</h4>
       <h4>Ingredients:  {drinks.Ingredients} </h4>
+      <button ><Link to ={`/healthydrinks/${id}/edit`}>Edit the food</Link> </button>
+     
     </div>
     </div>
   )

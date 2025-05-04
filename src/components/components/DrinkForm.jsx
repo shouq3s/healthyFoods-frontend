@@ -3,7 +3,7 @@ import React from 'react'
 function DrinkForm(props) {
   return (
     <div>
-      <h1>{props.nameverb} your Foods</h1>
+      <h1>{props.nameverb} your drinks</h1>
       <form onSubmit={props.handleSubmit}>                
                 <div>  
                     <label htmlFor='drinkname'>Drink Name:</label>
