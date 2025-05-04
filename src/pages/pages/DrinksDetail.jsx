@@ -3,14 +3,11 @@ import React, { useState,useEffect } from 'react'
 import NavBar from '../../components/NavBar'
 import { useParams , useNavigate } from 'react-router'
 
-
-import { Link } from 'react-router'
 import { authorizedRequest,setTokens } from '../../lib/api'
 function DrinksDetail() {
     const { id }= useParams() 
     const navigate = useNavigate()
     const [drinks,setDrinks] = useState(null)
-   
     const [errorMsg, setErrorMsg] = useState('')
 
     async function getSpecifyDrink() {
@@ -21,7 +18,7 @@ function DrinksDetail() {
         }catch (err) {
             console.log(err)
             if (err.status === 404) {
-                 navigate('/not-found')
+                navigate('/not-found')
             }else{
             setErrorMsg('Something went Wrong ')
         }}
