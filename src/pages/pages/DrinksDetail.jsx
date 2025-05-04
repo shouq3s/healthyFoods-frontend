@@ -4,12 +4,13 @@ import NavBar from '../../components/NavBar'
 import { useParams , useNavigate } from 'react-router'
 import { Link } from 'react-router'
 import { authorizedRequest,setTokens } from '../../lib/api'
+import axios from 'axios'
 function DrinksDetail() {
     const { id }= useParams() 
     const navigate = useNavigate()
     const [drinks,setDrinks] = useState(null)
     const [errorMsg, setErrorMsg] = useState('')
-    
+    const [deleteConfirm,setDeleteConfirm] = useState(false)
      
 
     async function getSpecifyDrink() {
@@ -28,8 +29,20 @@ function DrinksDetail() {
     useEffect(() => {
         getSpecifyDrink()
     }, [])
+    async function deletedrinks() {
+      try{
+        const response = await axios.delete(`http://127.0.0.1:8000/api/healthydrinks/${id}/`)
+        if (response.status===204){ 
+        navigate('/healthydrinks')
+        }
+      }catch(err){
+         console.log(err)
+      }     
+    }
+    function showConfirmDelete(){
+      setDeleteConfirm(true)
+    }
     
-   
     if (errorMsg) return <h1>{errorMsg}</h1>
     if (!drinks) return <h1>Loading your drinks...</h1>
     
@@ -51,7 +64,13 @@ function DrinksDetail() {
       <h4>Protein: {drinks.Protien}g</h4>
       <h4>Ingredients:  {drinks.Ingredients} </h4>
       <button ><Link to ={`/healthydrinks/${id}/edit`}>Edit the food</Link> </button>
-     
+      {
+        deleteConfirm
+        ?
+        <button onClick={deletedrinks}>are your sure?</button>
+        :
+        <button onClick={showConfirmDelete} >Delete</button>
+    } 
     </div>
     </div>
   )
