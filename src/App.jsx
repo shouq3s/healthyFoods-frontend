@@ -10,6 +10,7 @@ import Signup from './pages/Signup'
 import Login from './pages/Login'
 import Logout from './pages/Logout'
 import Healthydrinks from './pages/pages/Healthydrinks'
+import DrinksDetail from './pages/pages/DrinksDetail'
 
 import './App.css'
 function App() {
@@ -25,6 +26,7 @@ function App() {
      <Route path='/healthydrinks' element={<Healthydrinks/>}/>
      <Route path='/healthyfoods/new' element={<FoodsAdd/>}/>
      <Route path='/healthyfoods/:id' element={<FoodsDetail/>}/>
+     <Route path='/healthydrinks/:id' element={<DrinksDetail/>}/>
      <Route path='/healthyfoods/:id/edit' element={<FoodEdit/>}/>
      <Route path='*' element={<NotFound/>}/>
      
