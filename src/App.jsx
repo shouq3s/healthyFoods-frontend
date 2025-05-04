@@ -1,7 +1,7 @@
 import React from 'react'
 import Home from './pages/Home'
 import { BrowserRouter, Routes, Route } from 'react-router'
-import Allhealthyfoods from './pages/Healthyfoods'
+import Healthyfoods from './pages/Healthyfoods'
 import FoodsAdd from './pages/FoodsAdd'
 import FoodsDetail from './pages/FoodsDetail'
 import NotFound from './pages/NotFound'
@@ -9,6 +9,8 @@ import FoodEdit from './pages/FoodEdit'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
 import Logout from './pages/Logout'
+import Healthydrinks from './pages/pages/Healthydrinks'
+
 import './App.css'
 function App() {
   return (
@@ -19,7 +21,8 @@ function App() {
      <Route path="/signup" element={< Signup/>} />
      <Route path="/login" element={< Login/>} />
      <Route path="/logout" element={< Logout/>} />
-     <Route path='/healthyfoods' element={<Allhealthyfoods/>}/>
+     <Route path='/healthyfoods' element={<Healthyfoods/>}/>
+     <Route path='/healthydrinks' element={<Healthydrinks/>}/>
      <Route path='/healthyfoods/new' element={<FoodsAdd/>}/>
      <Route path='/healthyfoods/:id' element={<FoodsDetail/>}/>
      <Route path='/healthyfoods/:id/edit' element={<FoodEdit/>}/>

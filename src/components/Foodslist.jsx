@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 import { useEffect,useState } from 'react'
 import { Link } from 'react-router'
 import { authorizedRequest } from '../lib/api'

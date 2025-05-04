@@ -10,7 +10,7 @@ function NavBar() {
       <Link to='/'>Home </Link>|
      <Link to='/healthyfoods'>HealthyFoods </Link>|
       <Link to='/healthyfoods/new'> Add HealthyFoods</Link> |
-     <Link to='#'>healthy Drink   </Link>|
+     <Link to='/healthydrinks'>healthy Drink   </Link>|
      <Link to='#'>new healthy Drink</Link>|
      <Link to='/logout'>Logout </Link>|
      </ul> 
