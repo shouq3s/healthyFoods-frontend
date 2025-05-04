@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect,useState } from 'react'
 import { Link } from 'react-router'
-import { authorizedRequest } from '../lib/api'
+import { authorizedRequest } from '../../lib/api'
  function DrinksList() {
   const[drink,setdrink]=useState([])
 
