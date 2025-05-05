@@ -84,33 +84,41 @@ async function removeCollection(collectionId) {
     if (!foods) return <h1>Loading your foods...</h1>
     
   return (
-    <div>
+    <div >
         <NavBar/>
-        <div className="custom-list">
+        
+        <div  className="box">
+          <div className="columns">
+          <div className="column is-one-third">
         {
                 foods.image_url
                 ?
+                <figure className="image is-square">
                 <img src={foods.image_url} 
-                className='customImage'        
-                />
+                    
+                /></figure>
                 :
                 null
-            }
-      <h1> {foods.foodName} </h1>
-      <h4>calories: {foods.calories} Cals </h4>
-      <h4>Protein: {foods.Protien}g</h4>
-      <h4>Fiber: {foods.Fiber}g </h4>
-      <h4>Ingredients:  {foods.Ingredients} </h4>
-      <div>
-                    <h3>Collections:</h3>
+            } 
+            </div> 
+  <div className="columns">        
+      <h1 className="title"> {foods.foodName} </h1>
+      <div className="content">
+      <p><strong>calories: </strong>{foods.calories} Cals </p>
+      <p><strong>Protein:</strong> {foods.Protien}g</p>
+      <p><strong>Fiber:</strong> {foods.Fiber}g </p>
+      <p><strong>Ingredients:</strong>  {foods.Ingredients} </p>
+      </div> </div></div>
+      <div className="box">
+                    <h3  className="title is-4">Collections:</h3>
                     {foods.collection && foods.collection.length > 0 ? (
-                        <div>
+                        <div className="tags">
                             {foods.collection.map(collection => (           
-                                <p key={collection.id}>
+                                <p className="tag is-primary is-light" key={collection.id}>
                                     {collection.name}
                                     <button 
                                         className="delete is-small"
-                                        onClick={() => removeCollection(collection.id)}
+                                        onClick={() => removeCollection(collection.id)}      
                                         />
                                         </p>
                             ))}
@@ -119,7 +127,9 @@ async function removeCollection(collectionId) {
                         <p>No collections assigned</p>
                     )}
                     
-                    <div>
+                    <div >
+                    <div className="select ">
+                        
                         <select 
                             value={selectedCollection} 
                             onChange={(event) => setSelectedCollection(event.target.value)}
@@ -131,20 +141,21 @@ async function removeCollection(collectionId) {
                                 </option>
                             ))}
                         </select>
-                        <button onClick={addCollection}>Add Collection</button>
+                        </div>
+                        </div>
+                        <button className="button is-primary " onClick={addCollection}>Add Collection</button>
+                        
                     </div>
-                </div>
-            </div>
-  
-      <button ><Link to ={`/healthyfoods/${id}/edit`}>Edit the food</Link> </button>
+               
+      <button className="button is-link is-light"><Link to ={`/healthyfoods/${id}/edit`}>Edit the food</Link> </button>
       {
         deleteConfirm
         ?
-        <button onClick={deletefoods}>are your sure?</button>
+        <button className="button is-warning " onClick={deletefoods}>are your sure?</button>
         :
-        <button onClick={showConfirmDelete} >Delete</button>
+        <button  className="button is-danger" onClick={showConfirmDelete} >Delete</button>
     } 
-    
+     </div>
     </div>
   )
 }
