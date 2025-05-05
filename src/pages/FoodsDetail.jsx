@@ -101,7 +101,7 @@ async function removeCollection(collectionId) {
                 null
             } 
             </div> 
-  <div className="columns">        
+  <div className="column">        
       <h1 className="title"> {foods.foodName} </h1>
       <div className="content">
       <p><strong>calories: </strong>{foods.calories} Cals </p>
@@ -127,7 +127,7 @@ async function removeCollection(collectionId) {
                         <p>No collections assigned</p>
                     )}
                     
-                    <div >
+                    <div>
                     <div className="select ">
                         
                         <select 
