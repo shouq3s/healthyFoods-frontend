@@ -55,10 +55,21 @@ function FoodsDetail() {
 }  useEffect(() => {
   getCollections()
 }, [])
-
+async function removeCollection(collectionId) {
+    try {
+        const response = await authorizedRequest('post', `healthyfoods/${id}/remove-collection/${collectionId}/`)
+        if (response.status === 200) {
+            await getSpecifyFood()
+            
+        }
+    } catch (err) {
+        console.log(err)
+        setErrorMsg('Failed to remove collection')
+    }
+}
     async function deletefoods() {
       try{
-        const response = await axios.delete(`http://127.0.0.1:8000/api/healthyfoods/${id}/`)
+        const response = await authorizedRequest('delete', `healthyfoods/${id}/`) 
         if (response.status===204){ 
         navigate('/healthyfoods')
         }
@@ -93,11 +104,17 @@ function FoodsDetail() {
       <div>
                     <h3>Collections:</h3>
                     {foods.collection && foods.collection.length > 0 ? (
-                        <ul>
-                            {foods.collection.map(collection => (
-                                <li key={collection.id}>{collection.name}</li>
+                        <div>
+                            {foods.collection.map(collection => (           
+                                <p key={collection.id}>
+                                    {collection.name}
+                                    <button 
+                                        className="delete is-small"
+                                        onClick={() => removeCollection(collection.id)}
+                                        />
+                                        </p>
                             ))}
-                        </ul>
+                        </div>
                     ) : (
                         <p>No collections assigned</p>
                     )}
