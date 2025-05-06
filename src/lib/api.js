@@ -41,7 +41,7 @@ async function authorizedRequest(method, url, data = null) {
     let accessToken = localStorage.getItem('access_token')
     
     if (accessToken) {
-        accessToken= await refreshAccessToken();
+      
         config.headers['Authorization'] = `Bearer ${accessToken}`
     }
 
