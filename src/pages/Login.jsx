@@ -37,6 +37,7 @@ function Login() {
   }
   
   return (
+    <section className="hero is-fullheight ">
     <div className="container">
     <div className="columns is-centered">
       <div className="column is-half">
@@ -81,7 +82,7 @@ function Login() {
     </div>
     </div>
     </div>
-   
+   </section>
   )
 }
 
