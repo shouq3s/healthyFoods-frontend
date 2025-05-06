@@ -49,27 +49,35 @@ function DrinksDetail() {
   return (
     <div>
         <NavBar/>
-        <div className="custom-list">
+        <div  className="box">
+          <div className="columns">
+          <div className="column is-one-third">
         {
                 drinks.image_url
                 ?
+                <figure className="image is-square">
                 <img src={drinks.image_url} 
                 className='customImage'        
-                />
+                /></figure>
                 :
                 null
             }
-      <h1> {drinks.drinkname} </h1>
-      <h4>calories: {drinks.calories} Cals </h4>
-      <h4>Protein: {drinks.Protien}g</h4>
-      <h4>Ingredients:  {drinks.Ingredients} </h4>
-      <button ><Link to ={`/healthydrinks/${id}/edit`}>Edit the food</Link> </button>
+            </div>
+          <div className="column">
+      <h1 className="title"> {drinks.drinkname} </h1>
+      <div className="content">
+      <p> <strong>calories: </strong>{drinks.calories} Cals </p>
+      <p><strong> Protein: </strong>{drinks.Protien}g</p>
+      <p> <strong>Ingredients: </strong>I {drinks.Ingredients} </p>
+      </div></div></div>
+      <button className="button is-link is-light"><Link to ={`/healthydrinks/${id}/edit`}>Edit the food</Link> </button>
+      
       {
         deleteConfirm
         ?
-        <button onClick={deletedrinks}>are your sure?</button>
+        <button className="button is-warning" onClick={deletedrinks}>are your sure?</button>
         :
-        <button onClick={showConfirmDelete} >Delete</button>
+        <button className="button is-danger" onClick={showConfirmDelete} >Delete</button>
     } 
     </div>
     </div>

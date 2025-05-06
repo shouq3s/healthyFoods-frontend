@@ -9,6 +9,7 @@ function DrinkForm(props) {
                 <div className="field">  
                     <label className="label" htmlFor='drinkname'>Drink Name:</label>
                     <input
+                        className="input"
                         id='drinkname'
                         name='drinkname'
                         required
@@ -21,6 +22,7 @@ function DrinkForm(props) {
                      <div className="field">  
                     <label className="label" htmlFor='calories'>drink calories:</label>
                         <input
+                            className="input"
                             id='calories'
                             name='calories'
                             required
@@ -32,6 +34,7 @@ function DrinkForm(props) {
                     <div  className="field">  
                     <label className="label" htmlFor='Protien'>Protein:</label>
                     <input
+                        className="input"
                         id='Protien'
                         name='Protien'
                         required
@@ -44,6 +47,7 @@ function DrinkForm(props) {
                      <div  className="field">   
                     <label className="label" htmlFor='Ingredients'>Food Ingredients:</label>
                     <input
+                        className="textarea"
                         id='Ingredients'
                         name='Ingredients'
                         required
