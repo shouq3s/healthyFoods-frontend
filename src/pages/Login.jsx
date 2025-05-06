@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import { setTokens } from '../lib/api'
 import axios from 'axios'
-
+import { Link } from 'react-router'
 function Login() {
 
   const navigate = useNavigate()
@@ -37,10 +37,16 @@ function Login() {
   }
   
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="container">
+    <div className="columns is-centered">
+      <div className="column is-half">
+        <div className="box">
+      <h1 className="title has-text-centered">Login</h1>
       <form onSubmit={handleSubmit}>
+      <div className="field">
+      <label className="label">Username</label>
         <input
+          className="input"
           type="text"
           name="username"
           placeholder="Username"
@@ -48,7 +54,12 @@ function Login() {
           onChange={handleChange}
           required
         />
+        </div>
+        
+        <div className="field">
+        <label className="label">Password</label>
         <input
+          className="input"
           type="password"
           name="password"
           placeholder="Password"
@@ -56,10 +67,21 @@ function Login() {
           onChange={handleChange}
           required
         />
-        <button type="submit">Login</button>
+            </div>
+          <div className="field">
+        <button   className="button is-primary is-fullwidth" type="submit">Login</button>
         {error && <p>{error}</p>}
+        </div>
       </form>
+      <div className="has-text-centered">Don't have an account ? 
+            <Link to="/signup" className="is-link">
+               Sign up
+            </Link> </div>
     </div>
+    </div>
+    </div>
+    </div>
+   
   )
 }
 
