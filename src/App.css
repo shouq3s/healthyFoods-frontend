@@ -9,17 +9,9 @@
 body{
   background-color: #afbdb0
 }
-.custom-list {
-  
-  border: 1px solid black;
-  padding: 17px; 
-}
+
 .customImage {
   object-fit: cover;
+ 
 }
-.ul-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;      
-  padding: 12;
-}
+

@@ -15,32 +15,40 @@ import { authorizedRequest } from '../../lib/api'
     },[])
   
   return (
-    <div>
-      <h1>all drink :</h1>
-      <ul className="ul-list" >
+    <div className="container" >
+      <h1 className="title is-1 has-text-centered">all drink :</h1>
+      <div className="columns is-multiline ">
 
       {drink.map(drinks =>{
         return(
          
-          <div className="custom-list" key={drinks.id}>
+          <div className="column is-one-third" key={drinks.id}>
+            <div className="box has-border" >
              <Link to={`/healthydrinks/${drinks.id}`}> 
              {
                 drinks.image_url
                 ?
+                <figure className="image is-5by4">
                 <img src={drinks.image_url} 
                 className='customImage'
                 />
+                </figure>
                 :
                 null
-            }
-              <p >{drinks.drinkname} with {drinks.calories}(cals)</p>
-              
+            } <div className="content">
+              <h3 className="title is-4">{drinks.drinkname}</h3>
+              <p className="title is-6">{drinks.calories} calories</p>
+                    <div className="tags">
+                      <span className="tag is-info is-light">Protein: {drinks.Protien}g</span>
+              </div>
+              </div>
               </Link>
+          </div>
           </div>
          
         )
       })} 
-      </ul>
+      </div>
     </div>
   )
 }
