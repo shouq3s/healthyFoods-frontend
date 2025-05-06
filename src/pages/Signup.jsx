@@ -22,45 +22,62 @@ function Signup() {
         } catch (err) {
             console.log(err)
         }
-
     }
-
     return (
-        <div>
-            <h1>Sign Up </h1>
+        <div className="container">
+        <div className="columns is-centered">
+          <div className="column is-half">
+            <div className="box">
+            <h1 className="title has-text-centered ">Sign Up </h1>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="field">
+                <label className="label">Username</label>
                     <input
+                        className="input"
                         type='text'
                         placeholder='Username'
                         name='username'
+                        required
                         onChange={event => setUsername(event.target.value)}
                         value={username}
                     />
                 </div> 
-                <div>
+                <div className="field" >
+                <label className="label">Email</label>
                     <input
+                        className="input"
                         type='email'
                         placeholder='email'
                         name='email'
+                        required
                         onChange={event => setEmail(event.target.value)}
                         value={email}
                     />
                 </div>
-                <div>
+                <div  className="field">
+                <label className="label">Password</label>
                     <input
+                        className="input"
                         type='password'
                         placeholder='password'
                         name='password'
+                        required
                         onChange={event => setPassword(event.target.value)}
                         value={password}
                     />
                 </div>
+                <div className="field">
+                <button className="button is-primary is-fullwidth" type='submit'>Sign Up!</button>
                
-                <button type='submit'>Sign Up!</button>
+                </div>
             </form>
-            <Link to='/login'>Already have account? Login</Link>
+            <div className="has-text-centered ">Already have account? 
+            <Link to='/login' className="is-link">Login</Link>
+            </div>
         </div>
+      </div>
+    </div>
+</div>
     )
 }
 
