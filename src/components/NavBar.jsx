@@ -5,7 +5,7 @@ function NavBar() {
   return (
     <>
 
-     <nav>
+     <nav >
      <ul>
       <Link to='/'>Home </Link>|
      <Link to='/healthyfoods'>HealthyFoods </Link>|

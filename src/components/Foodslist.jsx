@@ -15,8 +15,8 @@ import { authorizedRequest } from '../lib/api'
     },[])
   
   return (
-    <div>
-      <h1>all Foods :</h1>
+    <div  >
+      <h1 className="title">all Foods :</h1>
       <ul className="ul-list" >
 
       {foods.map(food =>{

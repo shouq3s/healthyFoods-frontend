@@ -20,7 +20,9 @@ async function refreshAccessToken() {
         )
         setTokens({ access: response.data.access })
         console.log('access token has been refreshed')
+        return response.data.access 
     }
+   
 }
 
 async function authorizedRequest(method, url, data = null) {
@@ -37,7 +39,9 @@ async function authorizedRequest(method, url, data = null) {
 
     // If there is an access token add it to the headers in config object
     let accessToken = localStorage.getItem('access_token')
+    
     if (accessToken) {
+        accessToken= await refreshAccessToken();
         config.headers['Authorization'] = `Bearer ${accessToken}`
     }
 

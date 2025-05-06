@@ -1,7 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import NavBar from '../components/NavBar'
 import { useParams , useNavigate } from 'react-router'
-import axios from 'axios'
 
 import { Link } from 'react-router'
 import { authorizedRequest, setTokens } from '../lib/api'

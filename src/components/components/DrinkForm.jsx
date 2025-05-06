@@ -2,11 +2,12 @@ import React from 'react'
 
 function DrinkForm(props) {
   return (
-    <div>
-      <h1>{props.nameverb} your drinks</h1>
+    <div className="container">
+       <div className="box">
+      <h1 className="title is-4">{props.nameverb} your drinks</h1>
       <form onSubmit={props.handleSubmit}>                
-                <div>  
-                    <label htmlFor='drinkname'>Drink Name:</label>
+                <div className="field">  
+                    <label className="label" htmlFor='drinkname'>Drink Name:</label>
                     <input
                         id='drinkname'
                         name='drinkname'
@@ -17,8 +18,8 @@ function DrinkForm(props) {
                         />
                         
                         </div>
-                     <div>  
-                    <label htmlFor='calories'>drink calories:</label>
+                     <div className="field">  
+                    <label className="label" htmlFor='calories'>drink calories:</label>
                         <input
                             id='calories'
                             name='calories'
@@ -28,8 +29,8 @@ function DrinkForm(props) {
 
                             />
                     </div>  
-                    <div>  
-                    <label htmlFor='Protien'>Protein:</label>
+                    <div  className="field">  
+                    <label className="label" htmlFor='Protien'>Protein:</label>
                     <input
                         id='Protien'
                         name='Protien'
@@ -40,8 +41,8 @@ function DrinkForm(props) {
                         />
                     </div>   
                     <div> 
-                     <div>   
-                    <label htmlFor='Ingredients'>Food Ingredients:</label>
+                     <div  className="field">   
+                    <label className="label" htmlFor='Ingredients'>Food Ingredients:</label>
                     <input
                         id='Ingredients'
                         name='Ingredients'
@@ -49,8 +50,8 @@ function DrinkForm(props) {
                         value={props.Ingredients}
                         onChange={event => props.setIngredients(event.target.value)}
                         /> 
-                      <div>
-                      <label htmlFor='imgUpload'>Image</label>
+                      <div  className="field">
+                      <label className="label" htmlFor='imgUpload'>Image</label>
                     <input 
                         type='file'
                         accept='image/*'
@@ -58,9 +59,10 @@ function DrinkForm(props) {
                       />
                         </div> 
                 </div>     
-                <button type='submit'>Submit</button>
+                <button className="button is-primary"  type='submit'>Submit</button>
                 </div>
-                </form>
+            
+                </form>    </div>
     </div>
   )
 }
