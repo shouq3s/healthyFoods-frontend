@@ -15,9 +15,7 @@ body{
   padding: 17px; 
 }
 .customImage {
-  width: 300px;
-  height: 224px;
- 
+  object-fit: cover;
 }
 .ul-list {
   display: flex;
