@@ -1,5 +1,5 @@
 # Healthy foods Project and Repository Description
-A full-stack web app to help users discover healthy foods/drinks,also allowing user to view and create and more to foods or drinks 
+A full-stack web app to help users discover healthy foods/drinks with their calories,also allowing user to view , create and more to foods or drinks 
 
  web application built with React that can :
 - Browses healthy foods/drinks 
