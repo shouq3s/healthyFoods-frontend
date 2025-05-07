@@ -7,19 +7,13 @@ import axios from 'axios'
 import { useNavigate } from 'react-router'
 function FoodsAdd() {
   const navigate = useNavigate()
-  // const [foodData, setFoodData] = useState({
-  //   foodName:'',
-  //   calories:'',
-  //   Protien:'',
-  //   Fiber:'',
-  //   Ingredients:''
-  // })
+
   const [foodName, setFoodName] = useState('')
-      const [calories,setCalories] = useState('')
-      const [Protien,setProtien]= useState('')
-      const [Fiber,setFiber]= useState('')
-      const [Ingredients,setIngredients] = useState('')
-      const [imageFile, setImageFile] = useState(null)
+  const [calories,setCalories] = useState('')
+  const [Protien,setProtien]= useState('')
+  const [Fiber,setFiber]= useState('')
+  const [Ingredients,setIngredients] = useState('')
+  const [imageFile, setImageFile] = useState(null)
   
    async function handleSubmit(event) {
     event.preventDefault()
@@ -53,8 +47,6 @@ function FoodsAdd() {
     <div>
       <NavBar/>
       <FoodsForm 
-      // foodData={foodData}
-     // setFoodData={setFoodData}
       foodName={foodName}
       setFoodName={setFoodName}
       calories={calories}
@@ -66,8 +58,7 @@ function FoodsAdd() {
       Ingredients={Ingredients}
       setIngredients={setIngredients}
       setImageFile={setImageFile}
-      handleSubmit={handleSubmit}
-      
+      handleSubmit={handleSubmit} 
       nameverb='add'
       />
     </div>

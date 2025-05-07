@@ -4,7 +4,7 @@ import NavBar from '../../components/NavBar'
 import { useParams , useNavigate } from 'react-router'
 import { Link } from 'react-router'
 import { authorizedRequest,setTokens } from '../../lib/api'
-import axios from 'axios'
+
 function DrinksDetail() {
     const { id }= useParams() 
     const navigate = useNavigate()
@@ -31,7 +31,7 @@ function DrinksDetail() {
     }, [])
     async function deletedrinks() {
       try{
-        const response = await axios.delete(`http://127.0.0.1:8000/api/healthydrinks/${id}/`)
+        const response = await  authorizedRequest('delete', `healthydrinks/${id}/`) 
         if (response.status===204){ 
         navigate('/healthydrinks')
         }

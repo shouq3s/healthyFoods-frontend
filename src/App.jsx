@@ -1,6 +1,8 @@
 import React from 'react'
-import Home from './pages/Home'
+import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router'
+
+import Home from './pages/Home'
 import Healthyfoods from './pages/Healthyfoods'
 import FoodsAdd from './pages/FoodsAdd'
 import FoodsDetail from './pages/FoodsDetail'
@@ -13,7 +15,7 @@ import Healthydrinks from './pages/pages/Healthydrinks'
 import DrinksDetail from './pages/pages/DrinksDetail'
 import DrinkEdit from './pages/pages/DrinkEdit'
 import DrinksAdd from './pages/pages/DrinksAdd'
-import './App.css'
+
 function App() {
   return (
     <BrowserRouter>
