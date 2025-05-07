@@ -37,4 +37,15 @@ To clone the project up and running on your local machine, follow these instruct
 - `npm install axios`
 - `npm install react-router`
 - `npm install bulma`
+#### start the frontend server "
+-`npm run dev `
 
+#### images
+![healthyfoods](/images/foods.png)
+
+![healthyfoods](/images/details.png)
+
+## Future Improvements
+i want to let user count thier calories and nutrition for the days 
+
+and add eat time 
