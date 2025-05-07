@@ -100,57 +100,62 @@ async function removeCollection(collectionId) {
                 null
             } 
             </div> 
-  <div className="column">        
-      <h1 className="title"> {foods.foodName} </h1>
+        <div className="column">        
+        <h1 className="title"> {foods.foodName} </h1>
       <div className="content">
       <p><strong>calories: </strong>{foods.calories} Cals </p>
       <p><strong>Protein:</strong> {foods.Protien}g</p>
       <p><strong>Fiber:</strong> {foods.Fiber}g </p>
       <p><strong>Ingredients:</strong>  {foods.Ingredients} </p>
-      </div> </div></div>
+      </div> 
+      </div>
+      </div>
       <div className="box">
-                    <h3  className="title is-4">Collections:</h3>
-                    {foods.collection && foods.collection.length > 0 ? (
-                        <div className="tags">
-                            {foods.collection.map(collection => (           
-                                <p className="tag is-primary is-light" key={collection.id}>
-                                    {collection.name}
-                                    <button 
-                                        className="delete is-small"
-                                        onClick={() => removeCollection(collection.id)}      
-                                        />
-                                        </p>
-                            ))}
-                        </div>
-                    ) : (
-                        <p>No collections assigned</p>
-                    )}
+      <h3  className="title is-4">Collections:</h3>
+       {foods.collection && foods.collection.length > 0 ? (
+        <div className="tags">
+         {foods.collection.map(collection => (           
+         <p className="tag is-primary is-light" key={collection.id}>
+            {collection.name}
+           <button 
+                className="delete is-small"
+                onClick={() => removeCollection(collection.id)}      
+                />
+        </p>
+))}
+        </div>
+        ) : (
+        <p>No collections assigned</p>
+        )}
                     
-                    <div>
-                    <div className="select ">
-                        
-                        <select 
-                            value={selectedCollection} 
-                            onChange={(event) => setSelectedCollection(event.target.value)}
+        <div>
+        <div className="select">
+            <select 
+                value={selectedCollection} 
+                onChange={(event) => setSelectedCollection(event.target.value)}
                         >
-                            <option value="">Select a collection</option>
-                            {collections.map(collection => (
-                                <option key={collection.id} value={collection.id}>
-                                    {collection.name}
-                                </option>
-                            ))}
-                        </select>
-                        </div>
-                        </div>
-                        <button className="button is-primary " onClick={addCollection}>Add Collection</button>
-                        
-                    </div>
+                <option value="">Select a collection</option>
+
+                {collections.map(collection => (
+                    <option key={collection.id} value={collection.id}>
+                        {collection.name}
+                    </option>
+                ))}
+            </select>
+            </div>
+            </div>
+            <button className="button is-primary " onClick={addCollection}>Add Collection</button>            
+            </div>
                
       <button className="button is-link is-light"><Link to ={`/healthyfoods/${id}/edit`}>Edit the food</Link> </button>
       {
         deleteConfirm
-        ?
+        ?(
+        <div >
         <button className="button is-warning " onClick={deletefoods}>are your sure?</button>
+        <button className="button is-light" onClick={() => setDeleteConfirm(false)}>Cancel</button>
+        </div>
+        )
         :
         <button  className="button is-danger" onClick={showConfirmDelete} >Delete</button>
     } 
