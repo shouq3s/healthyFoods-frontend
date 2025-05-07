@@ -150,12 +150,12 @@ async function removeCollection(collectionId) {
       <button className="button is-link is-light"><Link to ={`/healthyfoods/${id}/edit`}>Edit the food</Link> </button>
       {
         deleteConfirm
-        ?(
+        ?
         <div >
         <button className="button is-warning " onClick={deletefoods}>are your sure?</button>
         <button className="button is-light" onClick={() => setDeleteConfirm(false)}>Cancel</button>
         </div>
-        )
+        
         :
         <button  className="button is-danger" onClick={showConfirmDelete} >Delete</button>
     } 

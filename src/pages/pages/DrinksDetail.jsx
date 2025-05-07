@@ -75,7 +75,10 @@ function DrinksDetail() {
       {
         deleteConfirm
         ?
+        <div>
         <button className="button is-warning" onClick={deletedrinks}>are your sure?</button>
+        <button className="button is-light" onClick={() => setDeleteConfirm(false)}>Cancel</button>
+        </div>
         :
         <button className="button is-danger" onClick={showConfirmDelete} >Delete</button>
     } 
