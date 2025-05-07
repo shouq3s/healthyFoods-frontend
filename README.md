@@ -1,7 +1,11 @@
-# Healthy foods Project Description
+# Healthy foods Project and Description Description
 A full-stack web app to help users discover healthy foods/drinks,also allowing user to view and create and more to foods or drinks 
 
-
+ web application built with React that can :
+- Browses healthy foods/drinks 
+- Secures user actions via JWT authentication
+- UX with Bulma CSS 
+- Powered by: Django REST Backend
 ## Tech Stack
 
 -React  

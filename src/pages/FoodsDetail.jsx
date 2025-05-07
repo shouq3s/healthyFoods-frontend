@@ -41,7 +41,6 @@ function FoodsDetail() {
   }
   async function addCollection() {
     if (!selectedCollection) return
-    
     try {
         const response = await authorizedRequest('post', `healthyfoods/${id}/add-collection/${selectedCollection}/`)
         if (response.status === 200) {
