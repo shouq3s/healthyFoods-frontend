@@ -22,8 +22,7 @@ function FoodEdit() {
             setProtien(response.data.Protien)
             setFiber(response.data.Fiber)
             setIngredients(response.data.Ingredients)
-          
-           setImageFile(response.data.imageFile)
+           setImageFile(response.data.image_url)
       }
       useEffect(()=>{
         getCurrentFoods()
