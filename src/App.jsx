@@ -32,8 +32,6 @@ function App() {
      <Route path='/healthyfoods/:id/edit' element={<FoodEdit/>}/>
      <Route path='/healthydrinks/:id/edit' element={<DrinkEdit/>}/>
      <Route path='*' element={<NotFound/>}/>
-     
-
       </Routes>
     </BrowserRouter>
     
