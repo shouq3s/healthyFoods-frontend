@@ -20,7 +20,7 @@ function DrinkEdit() {
             setCalories(response.data.calories )
             setProtien(response.data.Protien)
             setIngredients(response.data.Ingredients)
-           setImageFile(response.data.imageFile)
+           setImageFile(response.data.image_url)
       }
       useEffect(()=>{
         getCurrentFoods()
