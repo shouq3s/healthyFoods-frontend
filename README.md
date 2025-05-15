@@ -17,7 +17,7 @@ A full-stack web app to help users discover healthy foods/drinks with their calo
 -Custome CSS
 
 ## Backend Repository link:
-[Healthy-Foods](https://git.generalassemb.ly/shouqAlbalawi/healthyFoods-backend)
+[Healthy-Foods](https://github.com/shouq3s/healthyFoods-backend-)
 
 ## Getting Started/Code Installation
 
